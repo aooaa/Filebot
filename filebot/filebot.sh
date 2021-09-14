@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#!/bin/bash
+
+filebot -script fn:amc "/mnt/tdrive/watch" --output "/mnt/tdrive/stage" --action move --lang en -non-strict --log-file amc.log --def movieFormat="movies:/{n.space('.')}{'.('+y+')'}/{n.space('.')}{'.'+y}{'.'+vs}{'.'+vf}{'.'+hdr}{'.'+vc}{'.'+ac}{'.'+channels}{if (file.subtitle) fn =~ /[.]eng$/ ? '.en' : '.zh' }" seriesFormat="tv:/{n.space('.')}{'.('+y+')'}/{'Season'+'.'+s}/{n.space('.')}.{s00e00}{'.'+t.space('.')}{'.'+vs}{'.'+vf}{'.'+hdr}{'.'+vc}{'.'+ac}{'.'+channels}{if (file.subtitle) fn =~ /[.]eng$/ ? '.en' : '.zh' }" animeFormat="anime:/{n.space('.')}{'.('+y+')'}/{'Season'+'.'+s}/{n.space('.')}.{s00e00}{'.'+t.space('.')}{'.'+vs}{'.'+vf}{'.'+hdr}{'.'+vc}{'.'+ac}{'.'+channels}{if (file.subtitle) fn =~ /[.]eng$/ ? '.en' : '.zh' }" --def clean=y --def movieDB=TheMovieDB seriesDB=TheMovieDB::TV animeDB=TheMovieDB::TV --def minFileSize=1000 --def minLengthMS=60
