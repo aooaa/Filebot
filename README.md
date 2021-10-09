@@ -105,12 +105,13 @@ filebot -script fn:amc "/mnt/tdrive/watch" --output "/mnt/tdrive/stage" --action
 ```
 
 **添加开机启动**
+注意:需要after启动项rclone_mount.service挂载gdrive网盘，不然启动项断言失败而无法启动。
 ```
 cat > /etc/systemd/system/auto_rename.service <<EOF
 [Unit]
 Description='Filebot Auto Rename Process'
 AssertPathIsDirectory=/mnt/tdrive/watch
-After=network-online.target
+After=rclone_mount.service
 
 [Service]
 Type=simple
