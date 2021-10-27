@@ -21,8 +21,8 @@ startscript() {
             echo "Rename has finished." >>/root/logs/filebot.log
             du -sh /mnt/tdrive/stage/* > /mnt/tdrive/stage/log.txt
 
-            mv /mnt/tdrive/watch/* /mnt/tdrive/uploads/bad
-            ls /mnt/tdrive/uploads/bad > /mnt/tdrive/stage/bad.txt
+            mv /mnt/tdrive/watch/* /mnt/tdrive/edit
+            ls /mnt/tdrive/edit > /mnt/tdrive/stage/bad.txt
         else
             echo "No files in /mnt/tdrive/watch to rename." >>/root/logs/filebot.log
         fi
